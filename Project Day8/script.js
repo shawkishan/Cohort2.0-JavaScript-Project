@@ -115,11 +115,15 @@ const reels = [
         caption: "GSAP can literally change your career. Start today.",
         video: "./song/10.mp4",
         userprofile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330"
-    }
+    },
 ];
 
-var sum = ''
-reels.forEach(function (elem) {
+var allReels = document.querySelector('.all-reels')
+
+function addData()
+{var sum = ''
+reels.forEach(function (elem,idx) {
+  console.log(elem)
     sum = sum + `<div class="reel">
           <video  autoplay loop muted src="${elem.video}"></video>
           <div class="bottom">
@@ -133,7 +137,7 @@ reels.forEach(function (elem) {
             <h3>${elem.caption}</h3>
           </div>
           <div class="right">
-            <div class="like">
+            <div id=${idx} class="like">
               <h4 class="like-icon icon">${elem.isLiked?'<i class="love ri-heart-3-fill"></i>':'<i class="ri-heart-3-line"></i>'}</h4>
               <h6>${elem.likeCount}</h6>
             </div>
@@ -151,8 +155,12 @@ reels.forEach(function (elem) {
           </div>
         </div>`
 })
-
-
-var allReels = document.querySelector('.all-reels')
-
 allReels.innerHTML = sum
+}
+addData()
+
+allReels.addEventListener('click',function(dets){
+  console.log(dets.target.id)
+})
+
+
