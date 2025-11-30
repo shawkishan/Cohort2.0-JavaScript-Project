@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+@property --x {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+main {
+    background: #141E30;
+    background: -webkit-linear-gradient(to right, #243B55, #141E30);
+    background: linear-gradient(to right, #243B55, #141E30);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: 80%;
+    padding: 1rem;
+    animation: rotate 1s infinite;
+    background: #12c2e9;
+    border-radius: 10px;
+    transition: all .5s ease;
+    cursor: pointer;
+    box-shadow: 0px 0px 50px #12c2e9;
+}
+
+.card:hover {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0)) content-box,
+        conic-gradient(from var(--x), #f64f59, #c471ed, #12c2e9, #f64f59) border-box;
+}
+
+.card:hover img{
+    scale : 1.1;
+}
+
+.card:hover h1,.card:hover p{
+    color: #141E30;
+    transform: translateY(-20%);
+}
+
+.card .img {
+    height: 80%;
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 1s ease;
+}
+
+h1,p{
+    transition: all 1s ease;
+}
+
+@keyframes rotate {
+    from {
+        --x: 0deg;
+    }
+
+    to {
+        --x: 360deg;
+    }
+}
