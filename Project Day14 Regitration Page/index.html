@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full multi-step registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>Full multi-step registration Form</h1>
+        <form>
+            <div id="name">
+                <label for="nameInp">Name : </label>
+                <input autocomplete="off" type="text" placeholder="Enter your name..." id="nameInp">
+                <span id="nameInfo">There should be minimum of 3 characters!</span>
+            </div>
+            <div id="email">
+                <label for="emailInp">Email : </label>
+                <input autocomplete="off" type="email" placeholder="Enter your email..." id="emailInp">
+                <span id="emailInfo">This Email is not valid!</span>
+            </div>
+            <div id="phone-number">
+                <label for="numInp">Phone number : </label>
+                <input autocomplete="off" type="tel" placeholder="Enter your phone number" id="numInp">
+                <span id="numInfo">digits only, exactly 10 characters!</span>
+            </div>
+            <div id="password">
+                <label for="passwordInp">Password : </label>
+                <input autocomplete="off" type="password" placeholder="Enter your password..." id="passwordInp">
+                <span id="passwordInfo">must include an uppercase letter, a number, a symbol, and
+                    meet a minimum length of 8</span>
+            </div>
+            <div id="Confirm-password">
+                <label for="Confirm-password-inp">Confirm Password : </label>
+                <input autocomplete="off" type="password" placeholder="Enter your password..." id="Confirm-password-inp">
+                <span id="Confirm-password-info">Please recheck your password!</span>
+            </div>
+            
+            <input type="submit">
+            <span id="notValid">Please Validate the Form first!</span>
+        </form>
+        <div id="success">
+            <h1>Congratulations! Your Form has submitted</h1>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

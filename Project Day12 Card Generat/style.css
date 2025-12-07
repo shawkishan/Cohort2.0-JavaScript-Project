@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+
+main {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    background: conic-gradient(from 210deg, rgb(197, 187, 184) 0deg, rgb(197, 187, 184) 24deg, rgb(184, 181, 184) 24deg, rgb(184, 181, 184) 48deg, rgb(169, 175, 183) 48deg, rgb(169, 175, 183) 72deg, rgb(154, 168, 181) 72deg, rgb(154, 168, 181) 96deg, rgb(139, 161, 179) 96deg, rgb(139, 161, 179) 120deg, rgb(125, 152, 175) 120deg, rgb(125, 152, 175) 144deg, rgb(112, 144, 171) 144deg, rgb(112, 144, 171) 168deg, rgb(101, 135, 166) 168deg, rgb(101, 135, 166) 192deg, rgb(92, 126, 161) 192deg, rgb(92, 126, 161) 216deg, rgb(85, 117, 155) 216deg, rgb(85, 117, 155) 240deg, rgb(81, 108, 148) 240deg, rgb(81, 108, 148) 264deg, rgb(79, 99, 141) 264deg, rgb(79, 99, 141) 288deg, rgb(80, 90, 133) 288deg, rgb(80, 90, 133) 312deg, rgb(84, 83, 125) 312deg, rgb(84, 83, 125) 336deg, rgb(91, 75, 116) 336deg, rgb(91, 75, 116) 360deg);
+    display: flex;
+    align-items: start;
+    gap: 5rem;
+}
+
+
+/* form design */
+
+.form-box {
+    max-width: 300px;
+    background: linear-gradient(90deg, rgb(142, 197, 252) 0%, rgb(139, 207, 255) 16.667%, rgb(146, 214, 255) 33.333%, rgb(161, 216, 255) 50%, rgb(182, 213, 255) 66.667%, rgb(205, 205, 255) 83.333%, rgb(224, 195, 255) 100%);
+    overflow: hidden;
+    border-radius: 16px;
+    color: #010101;
+}
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 16px;
+    text-align: center;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #666;
+}
+
+.form-container {
+    overflow: hidden;
+    margin: 1rem 0 .5rem;
+    width: 100%;
+}
+
+.input {
+    border-radius: 8px;
+    background-color: whitesmoke;
+    margin-bottom: 5px;
+    border: 0;
+    outline: 0;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    font-size: .9rem;
+    padding: 8px 15px;
+}
+
+.form-section {
+    padding: 16px;
+    font-size: .85rem;
+    background-color: #e0ecfb;
+    box-shadow: rgb(0 0 0 / 8%) 0 -1px;
+}
+
+.form-section a {
+    font-weight: bold;
+    color: #0066ff;
+    transition: color .3s ease;
+}
+
+.form-section a:hover {
+    color: #005ce6;
+    text-decoration: underline;
+}
+
+.form #submit {
+    background-color: #0066ff;
+    color: #fff;
+    border: 0;
+    border-radius: 24px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.form #submit:hover {
+    background-color: #005ce6;
+}
+
+
+/* card design */
+
+#cards{
+    padding: 3rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#cards h1{
+    color: whitesmoke;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    cursor: pointer;
+}
+
+.card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: linear-gradient(126.6deg, rgb(44, 115, 210) 3.4%, rgb(251, 234, 255) 127.9%);
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+}
+
+.card__title {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+}
+
+.card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #d6d6d6;
+    line-height: 1.4;
+}
+
+.card:hover img {
+    scale: 0;
+    transform: rotate(-45deg);
+}
